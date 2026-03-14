@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-HAProxy is a high-performance TCP/HTTP load balancer and proxy server written in C. Current version: **3.4-dev2** (active development). Licensed under GPL v2 (source) and LGPL v2.1 (headers).
+HAProxy is a high-performance TCP/HTTP load balancer and proxy server written in C. Current version: **3.4-dev6** (active development). Licensed under GPL v2 (source) and LGPL v2.1 (headers).
 
 ## Build System
 
@@ -36,9 +36,9 @@ Modular make includes live in `include/make/` (verbose.mk, compiler.mk, errors.m
 ## Repository Structure
 
 ```
-src/             — C source files (~235 files, ~313K lines)
+src/             — C source files (~237 files, ~313K lines)
 include/
-  haproxy/       — Project headers (~334 files), organized by feature subdirs
+  haproxy/       — Project headers (~336 files), organized by feature subdirs
   import/        — Third-party libraries (ebtree, ist.h, xxhash, mjson)
   make/          — Makefile includes
 doc/             — Documentation (configuration.txt, coding-style.txt, etc.)
@@ -100,9 +100,12 @@ GitHub Actions workflows in `.github/workflows/`:
 - `aws-lc.yml`, `quictls.yml`, `wolfssl.yml` — TLS library variants
 - `openssl-master.yml` — OpenSSL bleeding edge
 - `cross-zoo.yml` — Cross-compilation tests
+- `windows.yml` — Windows/MSYS2 builds
+- `contrib.yml` — Dev utilities build (flags, poll, hpack)
 - `coverity.yml` — Static analysis
 - `codespell.yml` — Spell checking
 - `compliance.yml` — Compliance checks
+- `quic-interop-*.yml` — QUIC interoperability tests
 
 Cirrus CI (`.cirrus.yml`) handles FreeBSD builds.
 
